@@ -32,14 +32,43 @@
     white-space:nowrap;
     letter-spacing: .15em;
     animation:
-      typing 2.5s steps(30, end),
+      typing 5s steps(90, end),
       blink-caret .5s step-end infinite;
+    animation-iteration-count:infinite;
+
+
   }
 
-  .contact-info{
+  .resume-email{
     position:absolute;
-    top: 450px;
-    right: 40px;
+    top: 50%;
+    right:15%;
+    width:300px;
+    height: 100px;
+
+  }
+
+  a:link{
+    color:white;
+    text-decoration: none;
+  }
+
+  a:visited{
+    color: white;
+    text-decoration: none;
+
+  }
+
+  a:hover{
+    color:orange;
+    text-decoration: none;
+  }
+  a:active{
+    color: black;
+  }
+
+  #resume-button:hover{
+    background-color: orange;
   }
 
   @keyframes typing {
@@ -52,8 +81,18 @@
   50% { border-color: orange; }
 }
 
-  #contact-button{
-    margin-left:20px;
+  #resume-button{
+    position:absolute;
+    margin:50px;
+    height:90px;
+    width:150px;
+    border-radius:10%;
+    background-color:black;
+    border-color:orange;
+    border-width:5px;
+    color:white;
+    font-size:24px;
+
   }
   </style>
 
@@ -67,27 +106,45 @@
 
 
 
-  <body style="background:black;">
+  <body style="background:black;height:4000px;">
      Hello World!
 
     <div class="profile-pic" >
-      <img src="./personal-pic.jpg" alt="hazim-ab-halim" height="100%" width="100%">
+      <img src="./src/personal-pic.jpg" alt="hazim-ab-halim" height="100%" width="100%">
       </div>
 
     <div class="typewriter-intro">
-    <h1 style="text-align:center;">Welcome, </h1>
-      <h2 style="text-align:center;">My name is Hazim Ab Halim </h2>
-      <p style="text-align:center;">Computer Engineering Graduate from Boston University with
+
+    <h1>Welcome, </h1>
+      <h2>My name is Hazim Ab Halim </h2>
+      <p>Computer Engineering Graduate from Boston University with
           a passion for Cloud Computing</p>
 
       </div>
 
       <div>
-          <i class="fa fa-linkedin-square" style="position:absolute;font-size:72px;color:white;right:50px;top:500px;"> </i>
-          <a href="https://github.com/ZimLim"><i class="fa fa-github-square" style="position:absolute;font-size:72px;color:white;right:50px;top:570px;"> </i></a>
-          <i class="material-icons" style="font-size:72px;color:white;"></i>
+        <a href="https://www.linkedin.com/in/hazim-ab-halim-8b328518a/" target="_blank"><i class="fa fa-linkedin-square" style="position:absolute;font-size:72px;color:white;right:50px;top:500px;"> </i> </a>
+        <a href="https://github.com/ZimLim" target="_blank"><i class="fa fa-github-square" style="position:absolute;font-size:72px;color:white;right:50px;top:570px;"> </i></a>
         </div>
+
+        <div class="resume-email">
+          <button onclick="openResume()" id="resume-button" style="position:absolute;top:50%;right:10%;text-decoration: none;"> <a href="./src/resume.pdf" target="_blank">Resume</a></button>
+          <button id="resume-button" style="position:absolute;top:50%;right:90%;">Email </button>
+        </div>
+
+        <div class="top-nav-bar">
+
+        </div>
+
     </body>
 
+
+
+    <script>
+      function openResume(){
+        window.open("./src/resume.pdf","_blank","","true");
+      }
+
+    </script>
 
 </html>
